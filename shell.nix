@@ -1,6 +1,5 @@
 let
   pkgs = import <nixpkgs> { };
-  orca = pkgs.callPackage ./nix/orca.nix { };
   pilot = pkgs.callPackage ./nix/pilot.nix { };
 in
 pkgs.mkShell {
@@ -8,8 +7,10 @@ pkgs.mkShell {
     # creation tools
     pkgs.nur.repos.xe.orca
     pilot
+    yoshimi
 
     # conversion
     ffmpeg
+    audacity
   ];
 }
